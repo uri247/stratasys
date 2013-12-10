@@ -1,0 +1,8 @@
+﻿Build started 12/10/2013 7:44:32 AM.
+     1>Project "c:\uri\pp\stratasys\PrintProv\pp.vcxproj" on node 2 (Rebuild target(s)).
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.Platform.targets(44,5): error MSB8020: The builds tools for WindowsApplicationForDrivers8.1 (Platform Toolset = 'WindowsApplicationForDrivers8.1') cannot be found. To build using the WindowsApplicationForDrivers8.1 build tools, either click the Project menu or right-click the solution, and then select "Update VC++ Projects...". Install WindowsApplicationForDrivers8.1 to build using the WindowsApplicationForDrivers8.1 build tools.
+     1>Done Building Project "c:\uri\pp\stratasys\PrintProv\pp.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.18
