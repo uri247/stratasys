@@ -137,7 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="StockQuote.wsdl" />
-    <CustomBuild Include="stockquoteservice.wsdl" />
+    <CustomBuild Include="stockquoteservice.wsdl">
+      <SubType>Designer</SubType>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
