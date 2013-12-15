@@ -1,0 +1,19 @@
+\ResourceFile
+	contains the dll project for the driver's resources (Strings, icons, etc)
+\Install
+	The driver itself (currently set for x86)
+	\PrinterServiceClient.exe - the printer's extension UI
+	\ssysdrvx86.cat - catalog created using Inf2Cat.exe
+	\ssysprnevt.xml - contains simple event (aka notifications) handlers.
+						handlers can also be defined in the printer's extension itself
+						by identifying the ReasonID as notification and not printer-preferences.
+						The events' xml define what will be shown in the notification balloon,
+						or even send a command in case of something.
+	\StratasysDriver.gpd - contains main features of the printer and their defaults.
+						These features will be displayed in the Windows Store.
+	\StratasysDriver-manifest.ini - gathers all the specific machine's details/files references
+	\StratasysDriver.inf - contains the high-level definitions of the printer, w/o specifics.
+						If CompatibleID is defined here, define/bind it also in the manifest.
+	\StratasysDriver-res - a DLL containing Strings/Icons used in other files (Linker->Advanced param: \NOLINKER), such as ssysprnevt.xml
+	\StratasysDriver-Bidi-WSD - contains the possible messages allowed and used during the Bidi 
+						communication between the printer's extension and the service (aka printer) itself.

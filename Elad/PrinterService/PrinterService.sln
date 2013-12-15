@@ -1,0 +1,143 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrinterServiceService", "PrintServiceService\FileServiceService.vcxproj", "{9851C7FB-9216-4A68-AF65-23223D8A8B66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859} = {38F8FE21-B9D0-4FED-BC45-FE4B64B70859}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrinterServiceContract", "PrinterServiceContract\FileServiceContract.vcxproj", "{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrinterServiceClient", "PrintServiceClient\PrinterServiceClient.vcxproj", "{178040EE-85C8-40A5-8995-7A3BF44EEFE3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrinterServiceFuncDiscovery", "PrinterServiceFuncDiscovery\PrinterServiceFuncDiscovery.vcxproj", "{ACE019A3-76A4-4F75-8574-84D4C39FA518}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8} = {D615C82E-E3E0-44E0-87E3-5A069D75A2E8}
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C} = {153CA5F6-7829-4765-AC9B-EF2137CE879C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrinterServiceWsdProxy", "PrinterServiceWsdProxy\PrinterServiceWsdProxy.vcxproj", "{153CA5F6-7829-4765-AC9B-EF2137CE879C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8} = {D615C82E-E3E0-44E0-87E3-5A069D75A2E8}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{7299C7B6-6437-4203-8C91-ECD2BDFCE25A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Printer", "Printer", "{094E524D-F563-49C9-8000-323B0A044D88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{65DE9C76-4F59-4668-A6C1-2A52F324870C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrinterServiceFdInterface", "PrinterServiceFdInterface\PrinterServiceFdInterface.vcxproj", "{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driver", "Driver", "{BDDEBF49-5E4C-4B7F-BE60-44E701FA6308}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ResourceFile", "PrinterServiceDriver\ResourceFile\ResourceFile.vcxproj", "{93C38601-20C7-4F69-BB81-4A0C6794BE9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Install", "Install", "{B27E3CF1-1C74-49F2-914C-DF65ECE16CA2}"
+	ProjectSection(SolutionItems) = preProject
+		PrinterServiceDriver\Install\PrinterServiceClient.exe = PrinterServiceDriver\Install\PrinterServiceClient.exe
+		PrinterServiceDriver\Install\ssysdrvx86.cat = PrinterServiceDriver\Install\ssysdrvx86.cat
+		PrinterServiceDriver\Install\ssysprnevt.xml = PrinterServiceDriver\Install\ssysprnevt.xml
+		PrinterServiceDriver\Install\StratasysDriver-Bidi-WSD.xml = PrinterServiceDriver\Install\StratasysDriver-Bidi-WSD.xml
+		PrinterServiceDriver\Install\StratasysDriver-constraints.js = PrinterServiceDriver\Install\StratasysDriver-constraints.js
+		PrinterServiceDriver\Install\StratasysDriver-manifest.ini = PrinterServiceDriver\Install\StratasysDriver-manifest.ini
+		PrinterServiceDriver\Install\StratasysDriver.gpd = PrinterServiceDriver\Install\StratasysDriver.gpd
+		PrinterServiceDriver\Install\StratasysDriver.inf = PrinterServiceDriver\Install\StratasysDriver.inf
+		PrinterServiceDriver\Install\StratasysDriverRenderFilter-PipelineConfig.xml = PrinterServiceDriver\Install\StratasysDriverRenderFilter-PipelineConfig.xml
+		PrinterServiceDriver\Install\StratasysDriverRenderFilter.dll = PrinterServiceDriver\Install\StratasysDriverRenderFilter.dll
+		PrinterServiceDriver\Install\WudfUpdate_01011.dll = PrinterServiceDriver\Install\WudfUpdate_01011.dll
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrintServiceRenderFilter", "PrintServiceRenderFilter\PrintServiceRenderFilter.vcxproj", "{C82E6459-B677-4323-809C-4727ECBE5BC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|ARM = Release|ARM
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Debug|ARM.ActiveCfg = Debug|Win32
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Debug|Win32.Build.0 = Debug|Win32
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Debug|x64.ActiveCfg = Debug|Win32
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Release|ARM.ActiveCfg = Release|Win32
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Release|Win32.ActiveCfg = Release|Win32
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Release|Win32.Build.0 = Release|Win32
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66}.Release|x64.ActiveCfg = Release|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Debug|ARM.ActiveCfg = Debug|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Debug|Win32.ActiveCfg = Debug|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Debug|Win32.Build.0 = Debug|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Debug|x64.ActiveCfg = Debug|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Release|ARM.ActiveCfg = Release|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Release|Win32.ActiveCfg = Release|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Release|Win32.Build.0 = Release|Win32
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859}.Release|x64.ActiveCfg = Release|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Debug|ARM.ActiveCfg = Debug|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Debug|Win32.Build.0 = Debug|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Debug|x64.ActiveCfg = Debug|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Release|ARM.ActiveCfg = Release|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Release|Win32.ActiveCfg = Release|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Release|Win32.Build.0 = Release|Win32
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3}.Release|x64.ActiveCfg = Release|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Debug|ARM.ActiveCfg = Debug|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Debug|Win32.Build.0 = Debug|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Debug|x64.ActiveCfg = Debug|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Release|ARM.ActiveCfg = Release|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Release|Win32.ActiveCfg = Release|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Release|Win32.Build.0 = Release|Win32
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518}.Release|x64.ActiveCfg = Release|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Debug|ARM.ActiveCfg = Debug|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Debug|Win32.Build.0 = Debug|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Debug|x64.ActiveCfg = Debug|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Release|ARM.ActiveCfg = Release|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Release|Win32.ActiveCfg = Release|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Release|Win32.Build.0 = Release|Win32
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C}.Release|x64.ActiveCfg = Release|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Debug|ARM.ActiveCfg = Debug|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Debug|Win32.Build.0 = Debug|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Debug|x64.ActiveCfg = Debug|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Release|ARM.ActiveCfg = Release|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Release|Win32.ActiveCfg = Release|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Release|Win32.Build.0 = Release|Win32
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8}.Release|x64.ActiveCfg = Release|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Debug|ARM.ActiveCfg = Debug|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Debug|Win32.Build.0 = Debug|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Debug|x64.ActiveCfg = Debug|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Release|ARM.ActiveCfg = Release|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Release|Win32.ActiveCfg = Release|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Release|Win32.Build.0 = Release|Win32
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B}.Release|x64.ActiveCfg = Release|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Debug|ARM.ActiveCfg = Debug|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Debug|Win32.Build.0 = Debug|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Debug|x64.ActiveCfg = Debug|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Release|ARM.ActiveCfg = Release|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Release|Win32.ActiveCfg = Release|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Release|Win32.Build.0 = Release|Win32
+		{C82E6459-B677-4323-809C-4727ECBE5BC7}.Release|x64.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{153CA5F6-7829-4765-AC9B-EF2137CE879C} = {094E524D-F563-49C9-8000-323B0A044D88}
+		{9851C7FB-9216-4A68-AF65-23223D8A8B66} = {094E524D-F563-49C9-8000-323B0A044D88}
+		{38F8FE21-B9D0-4FED-BC45-FE4B64B70859} = {65DE9C76-4F59-4668-A6C1-2A52F324870C}
+		{ACE019A3-76A4-4F75-8574-84D4C39FA518} = {7299C7B6-6437-4203-8C91-ECD2BDFCE25A}
+		{178040EE-85C8-40A5-8995-7A3BF44EEFE3} = {7299C7B6-6437-4203-8C91-ECD2BDFCE25A}
+		{D615C82E-E3E0-44E0-87E3-5A069D75A2E8} = {7299C7B6-6437-4203-8C91-ECD2BDFCE25A}
+		{93C38601-20C7-4F69-BB81-4A0C6794BE9B} = {BDDEBF49-5E4C-4B7F-BE60-44E701FA6308}
+		{B27E3CF1-1C74-49F2-914C-DF65ECE16CA2} = {BDDEBF49-5E4C-4B7F-BE60-44E701FA6308}
+	EndGlobalSection
+EndGlobal

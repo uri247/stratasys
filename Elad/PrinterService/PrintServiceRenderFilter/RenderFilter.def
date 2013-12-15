@@ -1,0 +1,15 @@
+;
+;   File Name:
+;
+;      RenderFilter.def
+;
+;   Abstract:
+;
+;      Defines DLL exports for MS3DPrintDriverRenderFilter.dll
+;
+
+LIBRARY MS3DPrintDriverRenderFilter
+
+EXPORTS
+    DllGetClassObject PRIVATE
+    DllCanUnloadNow PRIVATE

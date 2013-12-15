@@ -1,0 +1,7 @@
+<DriverEvent eventId="{680FF946-5F97-4844-B62E-AF308AEE1B29}">
+    <Transport>SNMP</Transport>
+    <Query>\Printer</Query>
+    <Trigger result="\Printer.Extension.SomeSetting:Enabled" comparison="EqualTo" value="true">
+      <StandardMessage resourceId="2202" />
+    </Trigger>
+</DriverEvent>

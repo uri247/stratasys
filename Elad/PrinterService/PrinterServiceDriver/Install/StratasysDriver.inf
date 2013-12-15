@@ -1,0 +1,78 @@
+;
+; Copyright (c) Stratasys Corporation.  All rights reserved.
+;
+; Description:
+;    INF for WSD communication based 3D-Printer
+;
+
+[Version]
+Signature="$Windows NT$"
+Provider=%ManufacturerName%
+ClassGuid={DDBBF015-36E3-45c8-8DB8-7848BCEC1606}
+Class=Printer
+ClassVer=4.0
+DriverVer=09/10/2013,7.6.58.946 ;can be updated using stampinf
+; Uncomment these lines when you're going to sign the INF and build a catalog file.
+;CatalogFile.NTx86  = ssysdrvx86.cat ;can be created by Inf2cat with os 8_X86
+;CatalogFile.NTIA64 = ssysdrvia64.cat
+;CatalogFile.NTAMD64 = ssysdrvamd64.cat
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTx86
+
+[Standard.NTx86] ;The models are added here
+%DeviceName%=StratasysDriver_Install, WSDPRINT\SsysPnt_Cnx_235_HWID   ;HardwareID
+%DeviceName%=StratasysDriver_Install, WSDPRINT\SsysPnt12_Cnx_235_HWID ;HardwareID
+%DeviceName%=StratasysDriver_Install, {41F8BE9C-CF75-48f7-9294-1B2DC8698214} ;PrinterDriverID
+
+[StratasysDriver_Install]
+CopyFiles=StratasysDriver_FILES
+RegisterDlls=SsysRegSvr
+
+
+[StratasysDriver_FILES]
+StratasysDriver-manifest.ini
+StratasysDriver-constraints.js
+StratasysDriver.gpd
+StratasysDriverRenderFilter-PipelineConfig.xml
+StratasysDriverRenderFilter.dll
+StratasysDriver-Bidi-WSD.xml
+PrinterServiceClient.exe
+ssysprnevt.xml
+StratasysDriver-res.dll
+PrinterServiceFuncDiscovery.dll
+
+[SourceDisksFiles]
+StratasysDriver-manifest.ini=1 ;specify the default SourceDisksNames location index
+StratasysDriver-constraints.js=1
+StratasysDriver.gpd=1
+PrinterServiceContract.lib=1
+StratasysDriverRenderFilter-PipelineConfig.xml=1
+StratasysDriverRenderFilter.dll=1
+StratasysDriver-Bidi-WSD.xml=1
+PrinterServiceClient.exe=1
+ssysprnevt.xml=1
+StratasysDriver-res.dll=1
+PrinterServiceFuncDiscovery.dll=1
+
+[DestinationDirs]
+DefaultDestDir = 66000
+
+[SourceDisksNames.x86]
+1 = %DiskName%,,,""
+2 = %DiskName%,,,\x86
+
+[SourceDisksNames.amd64]
+1 = %DiskName%,,,\Amd64
+
+[SourceDisksNames.ia64]
+1 = %DiskName%,,,\Ia64
+
+[SsysRegSvr]
+; Register the proxy dll (calls DLLRegisterServer)
+66000,,PrinterServiceFuncDiscovery.dll,1,
+
+[Strings]
+ManufacturerName="Stratasys"
+DeviceName="StratasysPrinter Installation Package"
+DiskName="Stratasys Driver Installation Disk"

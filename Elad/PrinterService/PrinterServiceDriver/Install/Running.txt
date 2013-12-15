@@ -1,0 +1,19 @@
+[REG]
+- Install inf using PNPUTIL -i -a
+- Regsvr32 PrinterServiceFuncDiscovery.dll    (because it's a COM Object)
+- Run runServer.cmd
+- Add Device(s)
+- Run runClient.cmd
+
+[UNREG]
+- Remove Device(s) from "devices & printers"
+- Close server and client
+- Uninstall inf using PNPUTIL -f -d %windir%\inf\oemXXX.inf
+- Regsvr32 -u PrinterServiceFuncDiscovery.dll
+
+
+>> You'll see new devices in the Network directories
+>> You can then "add a new device..." and see the WSD device(s).
+>> The device won't appear when you "add a printer..." though
+
+IPrinterService

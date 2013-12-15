@@ -1,0 +1,43 @@
+import "unknwn.idl";
+
+[
+	object,
+	uuid(9EC071A0-03B3-4c4b-859A-52326D7923DA),
+	helpstring("IPrinterService Interface")
+]
+interface IPrinterService : IUnknown
+{
+	HRESULT
+		SendDocument
+		([in] LONG body
+		, [out] LONG* jobId
+		);
+
+	HRESULT
+		CancelJob
+		([in] LONG jobId);
+
+	HRESULT
+		GetPrinterElements
+		([in] INT opcode
+		, [out] WCHAR** bodyOut
+		);
+
+/*	HRESULT
+		GetActiveJobs
+		([in] GET_ACTIVE_JOBS_REQUEST_TYPE* body
+		, [out] GET_ACTIVE_JOBS_RESPONSE_TYPE** bodyOut
+		);
+
+	HRESULT
+		GetJobHistory
+		([in] GET_JOB_HISTORY_REQUEST_TYPE* body
+		, [out] GET_JOB_HISTORY_RESPONSE_TYPE** bodyOut
+		);
+
+	HRESULT
+		SetEventRate
+		([in] SET_EVENT_RATE_REQUEST_TYPE* body
+		, [out] SET_EVENT_RATE_RESPONSE_TYPE** bodyOut
+		);*/
+};

@@ -1,0 +1,51 @@
+@echo off
+rem Find the oemXX.inf file in <windir>\inf that corresponds to SimpleThermostat.inf. 
+rem The INF file will contain the comment description "INF for WSD and SSDP ISimpleThermostat devices".
+rem This is essentially the most RECENT OEMXXX.INF file !
+Set WARN_WSD_SSDP=4
+
+If "%1"=="u" goto Unreg
+If "%1"=="i" goto Reg
+Echo Syntax: Register [u/i]
+goto eof
+
+:Reg
+pnputil -i -a %~dp0DriverPackage\SimpleThermostat.inf
+cd Win32
+regsvr32 UPnPSimpleThermostatDevice.dll
+regsvr32 SimpleThermostatProxy.dll
+cd ..
+
+Echo launching Win32\WSDSimpleThermostatDevice.exe
+start cmd /c %~dp0Win32\WSDSimpleThermostatDevice.exe
+
+Echo launching Win32\UPnPSimpleThermostatDevice.exe
+start cmd /c %~dp0Win32\UPnPSimpleThermostatDevice.exe
+Echo Manually add the devices in the Network section...
+pause
+start cmd /c %~dp0Win32\SimpleThermostatClient.exe
+
+goto eof
+
+:Unreg
+Echo Inf set to oem%WARN_WSD_SSDP%.
+pause
+rem regsvr32 -u %~dp0Win32\UPnPSimpleThermostatDevice.dll
+cd Win32
+regsvr32 -u UPnPSimpleThermostatDevice.dll
+regsvr32 -u SimpleThermostatProxy.dll
+cd ..
+rem if exist %windir%\system32\SimpleThermostatProxy.dll (
+rem 	regsvr32 -u %windir%\system32\SimpleThermostatProxy.dll
+rem ) else (
+rem 	regsvr32 -u %dp0Win32\SimpleThermostatProxy.dll
+rem )
+pnputil -f -d %windir%\inf\oem%WARN_WSD_SSDP%.inf
+delete /Q %windir%\system32\SimpleThermostatProxy.dll
+goto eof
+
+
+:eof
+Echo.
+Echo Done.
+pause

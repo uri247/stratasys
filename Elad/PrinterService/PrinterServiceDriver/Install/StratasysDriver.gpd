@@ -1,0 +1,225 @@
+*% 
+*% This file is a sample GPD demonstrating basic printer features/options
+*% 
+*%
+
+*%******************************************************************************
+*%: The following root-level attributes should be modified to suit your printer
+*%******************************************************************************
+*GPDFileName: "StratasysDriver.GPD"
+*GPDFileVersion: "1.0"
+*GPDSpecVersion: "1.0"
+*Include:      "StdNames.gpd"
+*%**************************************************
+*% V3 GPD-based printer drivers must include msxpsinc.GPD file
+*%**************************************************
+*Include:      "msxpsinc.gpd"
+*ModelName:    "StratasysPrinter Installation Package"
+*MasterUnits:  PAIR(1200, 1200)
+*PrinterType:  PAGE
+*MaxCopies:    1
+*Command: CmdSendBlockData { *Cmd : "" }
+
+*PrintSchemaPrivateNamespaceURI: "http://schemas.microsoft.com/3MF/2013/01"
+
+*%******************************************************************************
+*%  The following features are required for proper print preview in Windows Store apps
+*%******************************************************************************
+*Feature: Orientation
+{
+    *rcNameID: =ORIENTATION_DISPLAY
+    *DefaultOption: PORTRAIT
+
+    *Option: PORTRAIT
+    {
+        *rcNameID: =PORTRAIT_DISPLAY
+    }
+}
+
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY
+    *DefaultOption: Option1
+
+    *Option: Option1
+    {
+        *Name: "600 x 600 " =DOTS_PER_INCH
+        *DPI: PAIR(600, 600)
+        *TextDPI: PAIR(600, 600)
+        *SpotDiameter: 100
+    }
+}
+
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: OutputArea
+
+    *Option: OutputArea
+    {
+        *Name: "Output Area"
+        *PrintableArea: PAIR(22080, 18000)
+        *PrintableOrigin: PAIR(22080, 15120)
+        *PageDimensions: PAIR(44160, 33120)
+        *CursorOrigin: PAIR(0, 0)
+    }
+}
+
+*%******************************************************************************
+*%                         Vendor Features
+*% A few samples of common features are shown below.
+*%******************************************************************************
+
+*Feature: Job3DEladsDemoFeature
+{
+	*Name: "Elad"
+	*DefaultOption: EladEnabled
+	
+	*Option: EladEnabled
+	{
+		*Name: "YesSwitch"
+        *switch: Job3DAddRaft
+        {
+            *case: RaftIncluded
+            {
+                *Job3DQuality: HighQuality
+            }
+            *case: RaftExcluded
+            {
+                *Job3DQuality: DraftQuality
+            }
+        }
+	}
+	
+	*Option: EladExcluded
+	{
+		*Name: "No"
+	}
+}
+
+*Feature: Job3DQuality
+{
+	*Name: "Quality"
+	*DefaultOption: MediumQuality
+
+	*Option: HighQuality
+	{
+		*Name: "High"
+	}
+	
+	*Option: MediumQuality
+	{
+		*Name: "Medium"
+	}
+	
+	*Option: DraftQuality
+	{
+		*Name: "Draft"
+	}
+}
+
+*Feature: Job3DDensity
+{
+	*Name: "Density"
+	*DefaultOption: LowDensity
+
+	*Option: HollowDensity
+	{
+		*Name: "Hollow"
+	}
+	
+	*Option: LowDensity
+	{
+		*Name: "Low"
+	}
+	
+	*Option: MediumDensity
+	{
+		*Name: "Medium"
+	}
+	
+	*Option: HighDensity
+	{
+		*Name: "High"
+	}
+	
+	*Option: SolidDensity
+	{
+		*Name: "Solid"
+	}
+}
+
+*Feature: Job3DAddSupports
+{
+	*Name: "Supports"
+	*DefaultOption: SupportsIncluded
+
+	*Option: SupportsIncluded
+	{
+		*Name: "Yes"
+	}
+	
+	*Option: SupportsExcluded
+	{
+		*Name: "No"
+	}
+}
+
+*Feature: Job3DMaterial
+{
+	*Name: "Material"
+	*DefaultOption: ABSPlastic
+
+	*Option: ABSPlastic
+	{
+		*Name: "ABS Plastic"
+	}
+	
+	*Option: PLAPlastic
+	{
+		*Name: "PLA Plastic"
+	}
+}
+
+*Feature: Job3DPrintHead
+{
+	*Name: "Print Head"
+	*DefaultOption: PrintHead1
+
+	*Option: PrintHead1
+	{
+		*Name: "1"
+	}
+	
+	*Option: PrintHead2
+	{
+		*Name: "2"
+	}
+}
+
+*Feature: Job3DAddRaft
+{
+	*Name: "Raft"
+	*DefaultOption: RaftIncluded
+
+	*Option: RaftIncluded
+	{
+		*Name: "Yes"
+	}
+	
+	*Option: RaftExcluded
+	{
+		*Name: "No"
+	}
+}
+
+*%******************************************************************************
+*%                         Cursor Commands
+*% The following cursor commands are mandatory
+*%
+*% Learn more: Cursor Commands
+*% http://msdn.microsoft.com/en-us/library/ff547223(VS.85).aspx
+*%******************************************************************************
+*Command: CmdCR { *Cmd : "" }
+*Command: CmdLF { *Cmd : "" }
+*Command: CmdFF { *Cmd : "" }

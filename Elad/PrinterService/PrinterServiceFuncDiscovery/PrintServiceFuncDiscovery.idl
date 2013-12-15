@@ -1,0 +1,20 @@
+import "FunctionDiscoveryProvider.idl";
+
+[
+	uuid(E3936600-F321-42cc-B6B5-2D83AEFA24AC),
+	helpstring("Stratasys 3D Printer Proxy Type Library"),
+	version(1.0)
+]
+library SsysPrinterSvcProxyLib
+{
+	importlib("stdole32.tlb");
+
+	[
+		uuid(54FA0783-7B66-42b6-B22E-7454441D6C05),
+		helpstring("SSYS 3D Printer Proxy Class")
+	]
+	coclass SsysPrinterSvcProxy
+	{
+		interface IFunctionDiscoveryServiceProvider;
+	};
+};

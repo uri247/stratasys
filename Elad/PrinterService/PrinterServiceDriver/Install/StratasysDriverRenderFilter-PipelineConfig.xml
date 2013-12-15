@@ -1,0 +1,11 @@
+
+<Filters>
+   <Filter dll            = "StratasysDriverRenderFilter.dll"
+           clsid          = "{f9290687-2a62-4b21-a68b-819c19aca697}"
+           name           = "StratasysDriverRender filter">
+           <Input   guid  = "{4d47a67c-66cc-4430-850e-daf466fe5bc4}" comment="IID_IPrintReadStream"/>
+           <Output  guid  = "{65bb7f1b-371e-4571-8ac7-912f510c1a38}" comment="IID_IPrintWriteStream"/> 
+   </Filter>
+</Filters>
+
+
