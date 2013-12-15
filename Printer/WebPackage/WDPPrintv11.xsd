@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://schemas.microsoft.com/windows/2010/06/wdp/printv11"
+           xmlns:wprt11="http://schemas.microsoft.com/windows/2010/06/wdp/printv11"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation>
+            WS-Print Extensions for Driver Configuration and Consumable Definition
+            Copyright 2010 Microsoft Corp. All rights reserved
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:annotation>
+        <xs:documentation> A Boolean element that denotes support for WS-Print V11 extensions</xs:documentation>
+    </xs:annotation>
+    <xs:element name="SupportsWSPrintv11" type="xs:boolean"/>
+
+    <xs:annotation>
+        <xs:documentation>Driver Configuration File definition</xs:documentation>
+    </xs:annotation>
+    <xs:element name="DriverConfiguration" type="wprt11:DriverConfigurationType"/>
+    <xs:complexType name="DriverConfigurationType">
+        <xs:sequence>
+            <xs:element name="GPDConfigFile" type="xs:string" minOccurs="0" />
+            <xs:element name="PPDConfigFile" type="xs:string" minOccurs="0" />
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute namespace="##other" processContents="lax" />
+    </xs:complexType>
+
+
+    <xs:annotation>
+        <xs:documentation>
+            Ink/Toner Color Representation definition
+            A 6-digit hex representation of the RGB color value this Consumable entry represents.
+            Examples of these values are:
+                Black – 000000
+                Red – FF0000 
+                White – FFFFFF
+                Magenta – FF00FF
+                Cyan – 00FFFF
+                Yellow – FFFF00
+                Blue – 0000FF
+        </xs:documentation>
+    </xs:annotation>
+    <xs:element name="ColorRepresentation" type="wprt11:ColorRepType"/>
+    <xs:simpleType name="ColorRepType">
+        <xs:restriction base="xs:string">
+            <xs:length value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:annotation>
+        <xs:documentation> Print Device Model Id value for device differentiation</xs:documentation>
+        <xs:documentation> Always represented as a GUID</xs:documentation>
+    </xs:annotation>
+    <xs:element name="DeviceModelId" type="wprt11:DeviceModelIdGuidType"/>
+    <xs:simpleType name="DeviceModelIdGuidType">
+        <xs:restriction base="xs:string">
+            <xs:length value="36"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
