@@ -14,8 +14,6 @@ Thumbs.db
 
 .gitignore~
 .gitignore.swp
-.DS_Store
-.metadata/
 
 Debug/
 Release/
@@ -23,21 +21,13 @@ ipch/
 Win7Debug/
 
 
-# A symbolic link to $gae/lib/django-1.4/django/contrib/admin/static/admin
-dj/pavarotti/static/admin/
+Printer/WebPackage/PrinterServiceType.idl
+Printer/WebPackage/PrinterServiceTypeProxy.cpp
+Printer/WebPackage/PrinterServiceTypeProxy.h
+Printer/WebPackage/PrinterServiceTypeStub.cpp
+Printer/WebPackage/PrinterServiceTypeTypes.cpp
+Printer/WebPackage/PrinterServiceTypeTypes.h
+Printer/WebPackage/Readme.txt
+Printer/WebPackage/codegen.config
 
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
 
