@@ -7,6 +7,6 @@ setup(name='WSDiscovery',
       description='WS-Discovery implementation for python',
       author='L.A. Fernando',
       author_email='lafernando@gmail.com',
-      url='http://code.google.com/p/python-ws-discovery/',
+      url='http://code.google.com/p/python-WSDiscovery/',
       py_modules=['WSDiscovery']
      )
