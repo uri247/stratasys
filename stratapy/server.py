@@ -11,7 +11,7 @@ def main():
 
     sco = Scope('http://myscope')
 
-    xaddr = 'localhost:8080/abc'
+    xaddr = 'dt1.london.home:80/abc'
 
     wsd.publishService(types=[ty1, ty2], scopes=[sco], xAddrs=[xaddr])
 

@@ -832,6 +832,9 @@ class MessageReceiverThread(threading.Thread):
                 time.sleep(0.01)
                 continue
             (data, addr) = val
+            print 'received from: ', addr
+            print data
+            print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 
             env = parseEnvelope(data)
 
@@ -917,6 +920,9 @@ class MessageSenderThread(threading.Thread):
             msg = self.__queue.pop(0)
             if msg.canSend():
                 data = createMessage(msg.getEnv())
+                print 'sending to: ', msg.getAddr()
+                print data
+                print '--------------------------------------------'
 
                 sendMessage(self.__sock, msg.getAddr(), msg.getPort(), data)
                 msg.refresh()
