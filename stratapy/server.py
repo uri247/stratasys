@@ -1,10 +1,17 @@
 import wsgiref.simple_server
 import webapp2
+from xml.dom import minidom
 from WSDiscovery import WSDiscovery, QName, Scope
+
 
 class MyWebapp(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello')
+
+    def post(self):
+        dom = minidom.parseString(self.request.body)
+        print dom.toprettyxml()
+        self.response.write('blah')
 
 app = webapp2.WSGIApplication(
     [
@@ -24,13 +31,13 @@ def main():
 
     sco = Scope('http://myscope')
 
-    xaddr = 'localhost:8080/abc'
+    xaddr = 'http://uri4:8080/abc'
 
     wsd.publishService(types=[ty1, ty2], scopes=[], xAddrs=[xaddr])
 
     #raw_input('press [Enter]: ')
 
-    server = wsgiref.simple_server.make_server('127.0.0.1', 8080, app)
+    server = wsgiref.simple_server.make_server('192.168.24.21', 8080, app)
     server.serve_forever()
 
 main()
